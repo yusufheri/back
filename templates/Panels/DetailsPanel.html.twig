@@ -1,0 +1,204 @@
+{% extends 'index.html.twig' %}
+
+{% block title %}Panels {% endblock %}
+ {% block stylesheets %}{% endblock %}
+
+
+{% block body %}
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Panel Details</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Panel</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <strong> Id : </strong>
+                    {{ panel.id }}
+                </h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div> <p>
+                        <strong> Description : </strong>
+                        {{ panel.description }}
+                    </p>
+                </div> <br>
+
+                <div> <p>
+                        <strong> Station : </strong>
+                        {{ panel.station }}
+                    </p>
+                </div> <br>
+
+                <div> <p>
+                        <strong> Longueur : </strong>
+                        {{ panel.longueur }}
+                    </p>
+                </div><br>
+
+                <div> <p>
+                        <strong> Largeur : </strong>
+                        {{ panel.largeur }}
+                    </p>
+                </div><br>
+
+                <div> <p>
+                        <strong> Généré par : </strong>
+                        {{ panel.user }}
+                    </p>
+                </div><br>
+
+
+            </div>
+            <!-- /.card-body -->
+            {#            <div class="card-footer">#}
+            {#                Footer#}
+            {#            </div>#}
+            <!-- /.card-footer-->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+
+{% endblock %}
+
+
+
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}Panels {% endblock %}#}
+{# {% block stylesheets %}{% endblock %}#}
+
+
+{#{% block body %}#}
+{#    <!-- Content Header (Page header) -->#}
+{#    <section class="content-header">#}
+{#        <div class="container-fluid">#}
+{#            <div class="row mb-2">#}
+{#                <div class="col-sm-6">#}
+{#                    <h1>Panels Details</h1>#}
+{#                </div>#}
+{#                <div class="col-sm-6">#}
+{#                    <ol class="breadcrumb float-sm-right">#}
+{#                        <li class="breadcrumb-item"><a href="#">Home</a></li>#}
+{#                        <li class="breadcrumb-item active">Panels Details</li>#}
+{#                    </ol>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div><!-- /.container-fluid -->#}
+{#    </section>#}
+
+{#    <!-- Main content -->#}
+{#    <section class="content">#}
+
+{#        <!-- Default box -->#}
+{#        <div class="card">#}
+{#            <div class="card-header">#}
+{#                #}{#                <h3 class="card-title">Station Details</h3>#}
+
+{#                <div class="card-tools">#}
+{#                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">#}
+{#                        <i class="fas fa-minus"></i></button>#}
+{#                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">#}
+{#                        <i class="fas fa-times"></i></button>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="card-body">#}
+{#                <div class="row">#}
+{#                    <div class="col-12 col-md-12 col-lg-12 ">#}
+{#                        <div class="row">#}
+{#                            <div class="col-12">#}
+{#                                <h4>Description :  {{ panel.description }}</h4>#}
+{#                                <div class="post">#}
+{#                                </div>#}
+
+
+{#                                <div class="post clearfix">#}
+
+{#                                    <p>#}
+{#                                        <strong>Longueur : </strong>#}
+{#                                        {{ panel.longueur }}#}
+{#                                    </p>#}
+{#                                </div>#}
+
+{#                                <div class="post clearfix">#}
+
+{#                                    <p>#}
+{#                                        <strong>Largeur : </strong>#}
+{#                                        {{ panel.largeur }}#}
+{#                                    </p>#}
+{#                                </div>#}
+
+{#                                <div class="post clearfix">#}
+
+{#                                    <p>#}
+{#                                        <strong>Station : </strong>#}
+{#                                        {{ panel.station }}#}
+{#                                    </p>#}
+{#                                </div>#}
+
+{#                                <div class="post clearfix">#}
+
+{#                                    <p>#}
+{#                                        <strong>Largeur : </strong>#}
+{#                                        {{ panel.station }}#}
+{#                                    </p>#}
+{#                                </div>#}
+
+{#                                <div class="post clearfix">#}
+
+{#                                    <p>#}
+{#                                        <strong>Largeur : </strong>#}
+{#                                        {{ panel.operations }}#}
+{#                                    </p>#}
+{#                                </div>#}
+
+
+{#                                #}{#                                <div class="post clearfix">#}
+
+{#                                #}{#                                    <p>#}
+{#                                #}{#                                        <strong>Panels : </strong>#}
+
+{#                                #}{#                                        {{ station.Panels}}#}
+{#                                #}{#                                    </p>#}
+{#                                #}{#                                </div>#}
+
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+
+{#                </div>#}
+{#            </div>#}
+{#            <!-- /.card-body -->#}
+{#        </div>#}
+{#        <!-- /.card -->#}
+
+{#    </section>#}
+{#    <!-- /.content -->#}
+
+{#{% endblock %}#}

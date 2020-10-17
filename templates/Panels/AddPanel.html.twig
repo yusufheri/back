@@ -1,0 +1,42 @@
+{% extends 'index.html.twig' %}
+
+{% block title %}Ajouter panel {% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Ajouter panel</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Ajouter panel</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-outline card-info">
+                    <div class="card-header">
+                        <br>
+                        <div class="card-body pad">
+                            {#  <div class="form-group" style="width: 60% ; margin-left:20% ">#}
+                            {# this form theme will be applied only to the form of this template #}
+                            {% form_theme format 'bootstrap_4_layout.html.twig' %}
+                            {{ form_start(format) }}
+                            {{ form_widget(format) }}
+                            {{ form_errors(format) }}
+                            {{ form_end(format) }}
+                            {#  </div>#}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

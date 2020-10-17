@@ -1,0 +1,84 @@
+{% extends "index.html.twig"%}
+
+{% block title %}home{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <!-- Small Box (Stat card) -->
+        <div class="row">
+
+            <div class="col-lg-3 col-4 offset-1">
+                <!-- small card -->
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        {% for itemsUser in itemsUsers %}
+                            <h3>{{ itemsUser }}</h3>
+                        {% endfor %}
+
+                        <p>Utilisateurs</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <a href="{{ path('user_list') }}" class="small-box-footer">
+                        More info <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-4 offset-md-0">
+                <!-- small card -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        {% for itemsStations in itemsStations %}
+                            <h3>{{ itemsStations }}</h3>
+                        {% endfor %}
+
+                        <p>Stations</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <a href="{{ path('station_list') }}" class="small-box-footer">
+                        More info <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-4 offset-0">
+                <!-- small card -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        {% for itemsPanels in itemsPanels  %}
+                            <h3>{{ itemsPanels  }}</h3>
+                        {% endfor %}
+
+                        <p>Panels</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <a href="{{ path('panel_list') }}" class="small-box-footer">
+                        More info <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </section>
+{% endblock %}

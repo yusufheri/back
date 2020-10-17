@@ -1,0 +1,226 @@
+{% extends 'index.html.twig' %}
+
+{% block title %}Operations {% endblock %}
+ {% block stylesheets %}{% endblock %}
+
+
+{% block body %}
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Operation Details</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Operation</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <strong> Date de création : </strong>
+                    {{ operation.dateCreation|date('Y-m-d H:i:s') }}</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card-body">
+
+                <div> <p>
+                        <strong> Station : </strong>
+                        {{ operation.station }}
+                    </p>
+                </div>
+
+                <div> <p>
+                        <strong> Panel : </strong>
+                        {{ operation.panel }}
+                    </p>
+                </div>
+
+                <div> <p>
+                        <strong> Effectuée par : </strong>
+                        {{ operation.user }}
+                    </p>
+                </div>
+
+                <div> <p>
+                        <strong> Commentaire : </strong>
+                        {{ operation.commentaire }}
+                    </p>
+                </div>
+
+                <div> <p>
+                        <strong> Libelle : </strong>
+                        {{ operation.libelle }}
+                    </p>
+                </div>
+                <div>
+{#                   <div><strong> Image Before: </strong></div>#}
+{#                    <br>#}
+
+{#                </div>#}
+
+                <table id="#example1" class="table table-bordered table-striped">
+                    <thead>
+                    <tr align="center">
+                        <th> Before </th>
+                        <th> After </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center">
+                                {% for image in operation.images  %}
+                                    {% if image.Type == 0 %}
+                                        {#                        <div>{{image.Type}}</div>#}
+                                        <div>
+                                            <img src="{{ asset('/uploads/' ~ image.name) }}" alt="Image" width="300">
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}</td>
+                            <td align="center">
+                                {% for image in operation.images %}
+                                    {% if image.Type == 1 %}
+                                        <div>
+                                            <img src="{{ asset('/uploads/' ~ image.name) }}" alt="ImageAfter" width="300">
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+{#                <div>#}
+{#                    <div><strong> Image After: </strong></div>#}
+{#                    <br>#}
+
+{#                </div>#}
+
+
+
+            </div>
+            <!-- /.card-body -->
+            {#            <div class="card-footer">#}
+            {#                Footer#}
+            {#            </div>#}
+            <!-- /.card-footer-->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+
+{% endblock %}
+
+
+
+
+
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}Stations {% endblock %}#}
+{# {% block stylesheets %}{% endblock %}#}
+
+
+{#{% block body %}#}
+{#    <!-- Content Header (Page header) -->#}
+{#    <section class="content-header">#}
+{#        <div class="container-fluid">#}
+{#            <div class="row mb-2">#}
+{#                <div class="col-sm-6">#}
+{#                    <h1>Stations Details</h1>#}
+{#                </div>#}
+{#                <div class="col-sm-6">#}
+{#                    <ol class="breadcrumb float-sm-right">#}
+{#                        <li class="breadcrumb-item"><a href="#">Home</a></li>#}
+{#                        <li class="breadcrumb-item active">Stations Details</li>#}
+{#                    </ol>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div><!-- /.container-fluid -->#}
+{#    </section>#}
+
+{#    <!-- Main content -->#}
+{#    <section class="content">#}
+
+{#        <!-- Default box -->#}
+{#        <div class="card">#}
+{#            <div class="card-header">#}
+{#                #}{#                <h3 class="card-title">Station Details</h3>#}
+
+{#                <div class="card-tools">#}
+{#                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">#}
+{#                        <i class="fas fa-minus"></i></button>#}
+{#                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">#}
+{#                        <i class="fas fa-times"></i></button>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="card-body">#}
+{#                <div class="row">#}
+{#                    <div class="col-12 col-md-12 col-lg-12 ">#}
+{#                        <div class="row">#}
+{#                            <div class="col-12">#}
+{#                                <h4>Address :  {{ station.address }}</h4>#}
+{#                                <div class="post">#}
+{#                                </div>#}
+
+
+{#                                <div class="post clearfix">#}
+
+{#                                    <p>#}
+{#                                        <strong>Longitude : </strong>#}
+{#                                        {{ station.Longitude }}#}
+{#                                    </p>#}
+{#                                </div>#}
+
+{#                                <div class="post clearfix">#}
+
+{#                                    <p>#}
+{#                                        <strong>Latitude : </strong>#}
+{#                                        {{ station.latitude }}#}
+{#                                    </p>#}
+{#                                </div>#}
+
+{#                                #}{#                                <div class="post clearfix">#}
+
+{#                                #}{#                                    <p>#}
+{#                                #}{#                                        <strong>Panels : </strong>#}
+
+{#                                #}{#                                        {{ station.Panels}}#}
+{#                                #}{#                                    </p>#}
+{#                                #}{#                                </div>#}
+
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+
+{#                </div>#}
+{#            </div>#}
+{#            <!-- /.card-body -->#}
+{#        </div>#}
+{#        <!-- /.card -->#}
+
+{#    </section>#}
+{#    <!-- /.content -->#}
+
+{#{% endblock %}#}
